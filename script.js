@@ -56,4 +56,17 @@ startButton.addEventListener("click", () => {
     console.log("Botão Iniciar clicado!");
     startGame();
 });
+const addResultToTable = (name, email, pontos) => {
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `<td>${name}</td><td>${email}</td><td>${pontos}</td>`;
+      resultadotabelaBody.appendChild(newRow);
+    };
+
+ formulario.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      formulario.style.display = 'none';
+      jogoDiv.style.display = 'block';
+      botaorestart.style.display = 'none';
 
