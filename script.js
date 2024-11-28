@@ -69,4 +69,12 @@ const addResultToTable = (name, email, pontos) => {
       formulario.style.display = 'none';
       jogoDiv.style.display = 'block';
       botaorestart.style.display = 'none';
+ };
+const resultadotabelaBody = document.querySelector('#resultadotabela tbody');
+ const loadResults = () => {
+      const storedResults = JSON.parse(localStorage.getItem('results')) || [];
+      storedResults.forEach(result => {
+        addResultToTable(result.name, result.email, result.pontos);
+      });
+    };
 
